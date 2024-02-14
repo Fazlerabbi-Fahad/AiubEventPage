@@ -35,7 +35,7 @@ export default function Tab() {
         aria-label="All"
         defaultChecked
       />
-      <div role="tabpanel" className="tab-content p-10">
+      <div role="tabpanel" className="tab-content p-5 md:p-10">
         <div className="grid grid-cols-1">
           {data.map((notice) => (
             <All key={notice.id} notice={notice}></All>
@@ -51,10 +51,13 @@ export default function Tab() {
         style={{ color: "#034EA1", fontWeight: 700 }}
         aria-label="Ongoing"
       />
-      <div role="tabpanel" className="tab-content p-10">
-        Ongoing
+      <div role="tabpanel" className="tab-content p-5 md:p-10">
+        <div className="grid grid-cols-1">
+          {data.map((notice) => (
+            <All key={notice.id} notice={notice}></All>
+          ))}
+        </div>
       </div>
-
       <input
         type="radio"
         name="my_tabs_1"
@@ -63,8 +66,12 @@ export default function Tab() {
         style={{ color: "#034EA1", fontWeight: 700 }}
         aria-label="Upcoming"
       />
-      <div role="tabpanel" className="tab-content p-10">
-        Upcoming
+      <div role="tabpanel" className="tab-content p-5 md:p-10">
+        <div className="grid grid-cols-1">
+          {data.map((notice) => (
+            <All key={notice.id} notice={notice}></All>
+          ))}
+        </div>
       </div>
 
       <input
@@ -75,8 +82,12 @@ export default function Tab() {
         style={{ color: "#034EA1", fontWeight: 700 }}
         aria-label="Past"
       />
-      <div role="tabpanel" className="tab-content p-10">
-        Past
+      <div role="tabpanel" className="tab-content p-5 md:p-10">
+        <div className="grid grid-cols-1">
+          {data.map((notice) => (
+            <All key={notice.id} notice={notice}></All>
+          ))}
+        </div>
       </div>
     </div>
   );

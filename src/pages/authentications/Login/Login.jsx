@@ -19,7 +19,7 @@ export default function Login() {
   const onSubmit = (data) => console.log(data);
   return (
     <div className="bg-[#EFEFEF] w-[100vw] h-[100vh] overflow-hidden p-0">
-      <div className="card shrink-0 w-full max-w-sm shadow-xl bg-base-100 rounded-lg absolute left-[40%] top-[20%] p-5">
+      <div className="card shrink-0 shadow-xl bg-base-100 rounded-lg absolute left-0 md:left-[30%] mt-10 p-5">
         <div className="flex justify-center ml-5">
           <div className="mb-8">
             <img src={logo} width="120px" />

@@ -2,28 +2,31 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import aiub8thjecl24001 from "../../../assets/images/aiub8thjecl24001.jpg";
 import { FaCalendarAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Event() {
   const { id } = useParams();
 
   return (
     <div className="max-w-screen-lg m-auto">
-      <div className="text-[11px] flex my-10">
-        <p className="text-primary mr-1">Home</p>
+      <div className="text-[11px] my-10 hidden md:flex ">
+        <p className="text-primary mr-1">
+          <Link to="/">Home</Link>
+        </p>
         <p className="mr-1 text-[#8392A1]">&gt;</p>
         <p className="text-[#8392A1]">News & Events</p>
       </div>
-      <div className="bg-[#EEEEEE] w-full rounded-[7.49px] mt-5 p-5">
-        <div className="card rounded-none p-3">
+      <div className="bg-[#EEEEEE] w-full rounded-[7.49px] mt-0 md:mt-5 p-0  md:p-5">
+        <div className="card rounded-none p-0 md:p-3">
           <figure>
             <img src={aiub8thjecl24001} className="rounded-none" alt="car!" />
           </figure>
-          <div className="card-body p-3">
+          <div className="card-body p-2 md:p-3">
             <h2 className="card-title text-primary">
               7th Death Anniversary of Mrs. Hasna Abedin, Founder and Former
               Chairperson, AIUB
             </h2>
-            <div className="text-primary flex justify-start text-md mb-3">
+            <div className="text-primary flex justify-start text-md mb-0 md:mb-3">
               <FaCalendarAlt className="mr-1" />
               <p>MONDAY, FEBRUARY 12,2024</p>
             </div>

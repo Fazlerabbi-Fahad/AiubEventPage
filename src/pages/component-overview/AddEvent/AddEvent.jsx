@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 export default function AddEvent() {
   const {
@@ -13,19 +14,21 @@ export default function AddEvent() {
 
   return (
     <div className="max-w-screen-lg m-auto">
-      <div className="text-[11px] flex my-10">
-        <p className="text-primary mr-1">Home</p>
+      <div className="text-[11px] hidden md:flex my-10 ">
+        <p className="text-primary mr-1">
+          <Link to="/">Home</Link>
+        </p>
         <p className="mr-1 text-[#8392A1]">&gt;</p>
-        <p className="text-[#8392A1]">News & Events</p>
+        <p className="text-[#8392A1] mt-0">News & Events</p>
       </div>
-      <div className="bg-[#EEEEEE] w-full rounded-[7.49px] mt-5 p-10">
+      <div className="bg-[#EEEEEE] w-full rounded-[7.49px] mt-0 md:mt-5 p-10">
         <div>
           <h4 className="font-bold text-[#004EA8] text-xl text-center">
             Add Events
           </h4>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} action="" className="mt-2">
-          <div className="grid gap-8 grid-cols-2 px-10">
+          <div className="grid gap-2 md:gap-8 grid-cols-1 md:grid-cols-2 px-10">
             <div>
               <div className="label">
                 <span className="label-text text-primary">Event Title</span>
@@ -49,7 +52,7 @@ export default function AddEvent() {
               />
             </div>
           </div>
-          <div className="grid gap-8 grid-cols-2 px-10 mt-3">
+          <div className="grid gap-2 md:gap-8 grid-cols-1 md:grid-cols-2 px-10">
             <div>
               <div className="label">
                 <span className="label-text text-primary">
@@ -77,7 +80,7 @@ export default function AddEvent() {
               />
             </div>
           </div>
-          <div className="grid gap-8 grid-cols-2 px-10 mt-3">
+          <div className="grid gap-2 md:gap-8 grid-cols-1 md:grid-cols-2 px-10">
             <div>
               <div className="label">
                 <span className="label-text text-primary">Event Guest</span>
@@ -117,7 +120,7 @@ export default function AddEvent() {
           </div>
           <div className="flex justify-center mt-5">
             <button className="btn btn-primary bg-primary btn-sm rounded-[3.27px] text-white  hover:bg-primary text-[8.91px] flex mr-4">
-              Cancel
+              <Link to="/event">Cancel</Link>
             </button>
             <button
               type="submit"
