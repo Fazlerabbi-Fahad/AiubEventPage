@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import Tab from "../../../components/ui/Tab/Tab";
@@ -6,6 +6,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 export default function Events() {
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleAddEvent = () => {
     navigate("/addEvent");
@@ -33,18 +34,19 @@ export default function Events() {
           Add Event
         </button>
         <div className="relative">
-          {/* <input
+          <input
+            onChange={(e) => setSearchTerm(e.target.value)}
             type="text"
             placeholder="Search"
             className="input input-bordered input-xs w-[132.23px] border-[#034EA1] rounded-[3.27px] max-w-xs pr-8"
           />
           <span className="absolute right-2 top-3 transform -translate-y-1/2 text-[#034EA1]">
             <FaSearch />
-          </span> */}
+          </span>
         </div>
       </div>
       <div className="bg-[#EEEEEE] w-full rounded-[7.49px] mt-5 p-2 md:p-4">
-        <Tab />
+        <Tab setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
       </div>
     </div>
   );

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import logo from "../../../assets/logo/logo.svg";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../contextApi/AuthProvider";
 
 export default function Login() {
   const navigate = useNavigate();
+  const { logIn } = useContext(AuthContext);
 
   const handleRegister = () => {
     navigate("/register");
@@ -12,11 +14,16 @@ export default function Login() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => console.log(data);
+  const handleLogin = (data) => {
+    logIn(data.email, data.password)
+      .then((result) => {
+        navigate(from, { replace: true });
+      })
+      .catch((error) => console.error(error));
+  };
   return (
     <div className="bg-[#EFEFEF] w-[100vw] h-[100vh] overflow-hidden p-0">
       <div className="card shrink-0 shadow-xl bg-base-100 rounded-lg absolute left-0 md:left-[30%] mt-10 p-5">
@@ -35,7 +42,7 @@ export default function Login() {
         <p className="text-primary font-medium text-center mb-[-10px]">
           Sign in with your email
         </p>
-        <form className="card-body">
+        <form onSubmit={handleSubmit(handleLogin)} className="card-body">
           <div className="form-control">
             <div>
               <input

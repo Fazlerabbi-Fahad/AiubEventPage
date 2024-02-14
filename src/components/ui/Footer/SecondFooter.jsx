@@ -2,15 +2,25 @@ import React from "react";
 import logo from "../../../assets/logo/logo.svg";
 import { MdLocationOn } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 
 export default function SecondFooter() {
+  const navigate = useNavigate();
+  const handleEvents = () => {
+    navigate("/event");
+  };
   return (
     <div className="bg-[#181818]">
       <footer className="footer py-10 bg-[#181818] max-w-screen-lg m-auto">
         <aside>
           <div>
             <div>
-              <img src={logo} width="58.31px" height="58.31px" />
+              <img
+                onClick={handleEvents}
+                src={logo}
+                width="58.31px"
+                height="58.31px"
+              />
             </div>
             <div>
               <h4 className="text-[#ABABAB] text-md font-bold mt-1">

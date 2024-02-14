@@ -6,6 +6,7 @@ import Event from "../pages/component-overview/Event/Event";
 import AddEvent from "../pages/component-overview/AddEvent/AddEvent";
 import Login from "../pages/authentications/Login/Login";
 import Register from "../pages/authentications/Register/Register";
+import PrivateRoute from "./PrivateRoutes";
 
 const MainRoutes = createBrowserRouter([
   {
@@ -22,7 +23,11 @@ const MainRoutes = createBrowserRouter([
       },
       {
         path: "/addEvent",
-        element: <AddEvent />,
+        element: (
+          <PrivateRoute>
+            <AddEvent />
+          </PrivateRoute>
+        ),
       },
     ],
   },
