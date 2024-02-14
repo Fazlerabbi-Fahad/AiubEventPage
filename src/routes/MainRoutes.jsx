@@ -13,7 +13,7 @@ const MainRoutes = createBrowserRouter([
     element: <MainLayout />,
     children: [
       {
-        path: "/",
+        path: "/event",
         element: <Events />,
       },
       {
